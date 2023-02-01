@@ -3,9 +3,11 @@ import json
 
 EXCEL_FILE = "data/Nuclear.xlsx"
 FPS = 60
-DURATION = 0.5
+DURATION = 0.25
 with open("colors.json") as f:
     colors = json.load(f)
+
+# colors = {}
 
 # load the data into a data frame
 df = DataHandler.DataHandler(excel_file=EXCEL_FILE, number_of_frames=FPS*DURATION*60).df
@@ -24,7 +26,7 @@ canvas.add_sub_title("From 1950 - 2021", color=(150,150,150))
 # adding a time
 canvas.add_time(df=df, time_indicator="year")
 
-# adding a logo
+# # adding a logo
 canvas.add_logo(logo="logo.png")
 
 # play the animation
